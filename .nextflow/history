@@ -67,3 +67,4 @@
 2019-07-14 13:50:28	6.3s	romantic_celsius	OK	1b40746c4f7cfe9cdfa308829a19af87	b7ec03ed-1fbb-4b25-92ae-d1b0c4a65936	nextflow comparation_of_population_projects.nf --input_dir test/data/ --project_name 12g_and_76g -resume
 2019-07-14 13:57:34	4.2s	deadly_snyder	OK	1b40746c4f7cfe9cdfa308829a19af87	b7ec03ed-1fbb-4b25-92ae-d1b0c4a65936	nextflow comparation_of_population_projects.nf --input_dir test/data/ --project_name 12g_and_76g -resume
 2019-07-14 14:04:33	2.4s	gloomy_tuckerman	OK	1b40746c4f7cfe9cdfa308829a19af87	b7ec03ed-1fbb-4b25-92ae-d1b0c4a65936	nextflow comparation_of_population_projects.nf --input_dir test/data/ --project_name 12g_and_76g --chunks 2 -resume
+2019-07-14 18:42:15	3.6s	confident_blackwell	OK	1b40746c4f7cfe9cdfa308829a19af87	b7ec03ed-1fbb-4b25-92ae-d1b0c4a65936	nextflow comparation_of_population_projects.nf --input_dir test/data/ --project_name 12g_and_76g --chunks 2 -resume

@@ -67,9 +67,9 @@
 ##bcftools_viewVersion=1.5+htslib-1.5
 ##bcftools_viewCommand=view --header-only MAY2.vcf.gz; Date=Fri Jul 12 20:03:01 2019
 ##bcftools_viewVersion=1.7+htslib-1.7-2
-##bcftools_viewCommand=view --exclude-uncalled --types snps ./12g_test_2.vcf.gz; Date=Sun Jul 14 13:57:35 2019
+##bcftools_viewCommand=view --exclude-uncalled --types snps ./12g_test_2.vcf.gz; Date=Sun Jul 14 18:42:15 2019
 ##bcftools_annotateVersion=1.7+htslib-1.7-2
-##bcftools_annotateCommand=annotate --remove INFO,FORMAT; Date=Sun Jul 14 13:57:35 2019
+##bcftools_annotateCommand=annotate --remove INFO,FORMAT; Date=Sun Jul 14 18:42:15 2019
 #CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
 1	38232	.	A	G	.	.	.
 1	38907	.	C	T	.	.	.
