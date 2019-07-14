@@ -1,0 +1,8 @@
+MKSHELL=/bin/bash
+#Definir MKSHELL ahora debe ir siempre arriba con /bin/bash. "Todo lo que viene a continuación interprétalo con bash"
+
+#Este módulo comprime los archivos VCFs
+%.simplified.concatenated.vcf.bgz:Q: %.simplified.concatenated.vcf
+	echo "[DEBUG] Comprimiendo archivos"
+	bcftools view --output-file $target.build --output-type z $prereq \
+	&& mv $target.build $target

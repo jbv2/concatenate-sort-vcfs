@@ -1,0 +1,8 @@
+MKSHELL=/bin/bash
+#Definir MKSHELL ahora debe ir siempre arriba con /bin/bash. "Todo lo que viene a continuación interprétalo con bash"
+
+#Este bloque simplifica el vcf con bcftools para hacerlo más fácilmente manipulable
+%.simplified.vcf:Q: %.vcf.gz
+	echo "[DEBUG] Simplificando los vcf"
+	bcftools view $prereq --exclude-uncalled  --types snps | cut -f1-9 | bcftools annotate --remove "INFO,FORMAT" > $target.build \
+	&& mv $target.build $target

@@ -1,0 +1,62 @@
+Jul-14 14:04:33.175 [main] DEBUG nextflow.cli.Launcher - $> nextflow comparation_of_population_projects.nf --input_dir test/data/ --project_name 12g_and_76g --chunks 2 -resume
+Jul-14 14:04:33.301 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 19.04.1
+Jul-14 14:04:33.315 [main] INFO  nextflow.cli.CmdRun - Launching `comparation_of_population_projects.nf` [gloomy_tuckerman] - revision: 1b40746c4f
+Jul-14 14:04:33.330 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /mnt/Almacenamiento/Documents/78GMX/12g_and_76g/nextflow.config
+Jul-14 14:04:33.331 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /mnt/Almacenamiento/Documents/78GMX/12g_and_76g/nextflow.config
+Jul-14 14:04:33.357 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Jul-14 14:04:33.658 [main] DEBUG nextflow.Session - Session uuid: b7ec03ed-1fbb-4b25-92ae-d1b0c4a65936
+Jul-14 14:04:33.658 [main] DEBUG nextflow.Session - Run name: gloomy_tuckerman
+Jul-14 14:04:33.659 [main] DEBUG nextflow.Session - Executor pool size: 12
+Jul-14 14:04:33.694 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 19.04.1 build 5072
+  Modified: 03-05-2019 12:29 UTC (07:29 CDT)
+  System: Linux 4.18.0-25-generic
+  Runtime: Groovy 2.5.6 on OpenJDK 64-Bit Server VM 11.0.3+7-Ubuntu-1ubuntu218.04.1
+  Encoding: UTF-8 (UTF-8)
+  Process: 22293@judith [127.0.1.1]
+  CPUs: 12 - Mem: 15.4 GB (10.3 GB) - Swap: 2 GB (2 GB)
+Jul-14 14:04:33.734 [main] DEBUG nextflow.Session - Work-dir: /mnt/Almacenamiento/Documents/78GMX/12g_and_76g/work [fuseblk]
+Jul-14 14:04:33.734 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /mnt/Almacenamiento/Documents/78GMX/12g_and_76g/bin
+Jul-14 14:04:34.358 [main] DEBUG nextflow.Session - Session start invoked
+Jul-14 14:04:34.365 [main] DEBUG nextflow.processor.TaskDispatcher - Dispatcher > start
+Jul-14 14:04:34.372 [main] DEBUG nextflow.script.ScriptRunner - > Script parsing
+Jul-14 14:04:34.545 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jul-14 14:04:34.577 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: test/data/; pattern: *.vcf.gz; options: [:]
+Jul-14 14:04:34.614 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: mkmodules/mk-prepare-vcfs/; pattern: *; options: [:]
+Jul-14 14:04:34.690 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Jul-14 14:04:34.691 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Jul-14 14:04:34.697 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Jul-14 14:04:34.699 [main] INFO  nextflow.executor.Executor - [warm up] executor > local
+Jul-14 14:04:34.703 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=12; memory=15.4 GB; capacity=12; pollInterval=100ms; dumpInterval=5m
+Jul-14 14:04:34.707 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: LocalPollingMonitor
+Jul-14 14:04:34.707 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jul-14 14:04:34.710 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: local
+Jul-14 14:04:34.738 [main] DEBUG nextflow.Session - >>> barrier register (process: _pre1_prepare_vcfs)
+Jul-14 14:04:34.741 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > _pre1_prepare_vcfs -- maxForks: 12
+Jul-14 14:04:34.785 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: mkmodules/mk-concatenate-vcfs/; pattern: *; options: [:]
+Jul-14 14:04:34.798 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Jul-14 14:04:34.799 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Jul-14 14:04:34.799 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Jul-14 14:04:34.801 [main] DEBUG nextflow.Session - >>> barrier register (process: _pre2_concatenate)
+Jul-14 14:04:34.802 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > _pre2_concatenate -- maxForks: 12
+Jul-14 14:04:34.812 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: mkmodules/mk-compress-vcfs/; pattern: *; options: [:]
+Jul-14 14:04:34.823 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Jul-14 14:04:34.823 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Jul-14 14:04:34.824 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Jul-14 14:04:34.826 [main] DEBUG nextflow.Session - >>> barrier register (process: _pre3_compress_vcfs)
+Jul-14 14:04:34.828 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > _pre3_compress_vcfs -- maxForks: 12
+Jul-14 14:04:34.831 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Jul-14 14:04:34.832 [main] DEBUG nextflow.Session - Session await
+Jul-14 14:04:35.083 [Actor Thread 3] INFO  nextflow.processor.TaskProcessor - [fa/fb9d5f] Cached process > _pre1_prepare_vcfs (1)
+Jul-14 14:04:35.084 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [cb/3f5497] Cached process > _pre1_prepare_vcfs (2)
+Jul-14 14:04:35.128 [Actor Thread 2] DEBUG nextflow.Session - <<< barrier arrive (process: _pre1_prepare_vcfs)
+Jul-14 14:04:35.161 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [73/e49bb2] Cached process > _pre2_concatenate
+Jul-14 14:04:35.164 [Actor Thread 7] DEBUG nextflow.Session - <<< barrier arrive (process: _pre2_concatenate)
+Jul-14 14:04:35.180 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [87/001ca1] Cached process > _pre3_compress_vcfs
+Jul-14 14:04:35.183 [Actor Thread 8] DEBUG nextflow.Session - <<< barrier arrive (process: _pre3_compress_vcfs)
+Jul-14 14:04:35.184 [main] DEBUG nextflow.Session - Session await > all process finished
+Jul-14 14:04:35.240 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local)
+Jul-14 14:04:35.241 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jul-14 14:04:35.259 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=0; failedCount=0; ignoredCount=0; cachedCount=4; succeedDuration=0ms; failedDuration=0ms; cachedDuration=2.2s]
+Jul-14 14:04:35.407 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Jul-14 14:04:35.438 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

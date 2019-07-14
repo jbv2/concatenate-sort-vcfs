@@ -1,0 +1,94 @@
+Jul-14 13:42:51.760 [main] DEBUG nextflow.cli.Launcher - $> nextflow comparation_of_population_projects.nf --input_dir test/data/ --project_name 12g_and_76g -resume
+Jul-14 13:42:51.880 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 19.04.1
+Jul-14 13:42:51.892 [main] INFO  nextflow.cli.CmdRun - Launching `comparation_of_population_projects.nf` [soggy_spence] - revision: 555e8fb815
+Jul-14 13:42:51.911 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /mnt/Almacenamiento/Documents/78GMX/12g_and_76g_1/nextflow.config
+Jul-14 13:42:51.913 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /mnt/Almacenamiento/Documents/78GMX/12g_and_76g_1/nextflow.config
+Jul-14 13:42:51.942 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Jul-14 13:42:52.266 [main] DEBUG nextflow.Session - Session uuid: b7ec03ed-1fbb-4b25-92ae-d1b0c4a65936
+Jul-14 13:42:52.266 [main] DEBUG nextflow.Session - Run name: soggy_spence
+Jul-14 13:42:52.267 [main] DEBUG nextflow.Session - Executor pool size: 12
+Jul-14 13:42:52.297 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 19.04.1 build 5072
+  Modified: 03-05-2019 12:29 UTC (07:29 CDT)
+  System: Linux 4.18.0-25-generic
+  Runtime: Groovy 2.5.6 on OpenJDK 64-Bit Server VM 11.0.3+7-Ubuntu-1ubuntu218.04.1
+  Encoding: UTF-8 (UTF-8)
+  Process: 8551@judith [127.0.1.1]
+  CPUs: 12 - Mem: 15.4 GB (10.1 GB) - Swap: 2 GB (2 GB)
+Jul-14 13:42:52.336 [main] DEBUG nextflow.Session - Work-dir: /mnt/Almacenamiento/Documents/78GMX/12g_and_76g_1/work [fuseblk]
+Jul-14 13:42:52.337 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /mnt/Almacenamiento/Documents/78GMX/12g_and_76g_1/bin
+Jul-14 13:42:52.909 [main] DEBUG nextflow.Session - Session start invoked
+Jul-14 13:42:52.917 [main] DEBUG nextflow.processor.TaskDispatcher - Dispatcher > start
+Jul-14 13:42:52.924 [main] DEBUG nextflow.script.ScriptRunner - > Script parsing
+Jul-14 13:42:53.125 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jul-14 13:42:53.159 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: test/data/; pattern: *.vcf.gz; options: [:]
+Jul-14 13:42:53.196 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: mkmodules/mk-prepare-vcfs/; pattern: *; options: [:]
+Jul-14 13:42:53.278 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Jul-14 13:42:53.278 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Jul-14 13:42:53.283 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Jul-14 13:42:53.285 [main] INFO  nextflow.executor.Executor - [warm up] executor > local
+Jul-14 13:42:53.289 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=12; memory=15.4 GB; capacity=12; pollInterval=100ms; dumpInterval=5m
+Jul-14 13:42:53.292 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: LocalPollingMonitor
+Jul-14 13:42:53.292 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jul-14 13:42:53.294 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: local
+Jul-14 13:42:53.324 [main] DEBUG nextflow.Session - >>> barrier register (process: _pre1_prepare_vcfs)
+Jul-14 13:42:53.327 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > _pre1_prepare_vcfs -- maxForks: 12
+Jul-14 13:42:53.373 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: mkmodules/mk-concatenate-vcfs/; pattern: *; options: [:]
+Jul-14 13:42:53.388 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Jul-14 13:42:53.389 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Jul-14 13:42:53.389 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Jul-14 13:42:53.391 [main] DEBUG nextflow.Session - >>> barrier register (process: _pre2_concatenate)
+Jul-14 13:42:53.391 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > _pre2_concatenate -- maxForks: 12
+Jul-14 13:42:53.405 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: mkmodules/mk-compress-vcfs/; pattern: *; options: [:]
+Jul-14 13:42:53.418 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Jul-14 13:42:53.419 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Jul-14 13:42:53.421 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Jul-14 13:42:53.424 [main] DEBUG nextflow.Session - >>> barrier register (process: _pre3_compress_vcfs)
+Jul-14 13:42:53.425 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > _pre3_compress_vcfs -- maxForks: 12
+Jul-14 13:42:53.428 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Jul-14 13:42:53.430 [main] DEBUG nextflow.Session - Session await
+Jul-14 13:42:53.656 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [34/dd731d] Cached process > _pre1_prepare_vcfs (2)
+Jul-14 13:42:53.656 [Actor Thread 3] INFO  nextflow.processor.TaskProcessor - [af/1b02d3] Cached process > _pre1_prepare_vcfs (1)
+Jul-14 13:42:53.695 [Actor Thread 2] DEBUG nextflow.Session - <<< barrier arrive (process: _pre1_prepare_vcfs)
+Jul-14 13:42:53.777 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-14 13:42:53.787 [Task submitter] INFO  nextflow.Session - [4c/a698b9] Submitted process > _pre2_concatenate
+Jul-14 13:42:54.587 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: _pre2_concatenate; status: COMPLETED; exit: 123; error: -; workDir: /mnt/Almacenamiento/Documents/78GMX/12g_and_76g_1/work/4c/a698b92cf4cb30e540aa7f66885adb]
+Jul-14 13:42:54.606 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > '_pre2_concatenate'
+
+Caused by:
+  Process `_pre2_concatenate` terminated with an error exit status (123)
+
+Command executed:
+
+  export INDEX_PATH="test/data/*.gz"
+  export OUTPUT_FILE="test/data/12g.simplified.concatenated.vcf"
+  bash runmk.sh
+
+Command exit status:
+  123
+
+Command output:
+  [DEBUG] Concatenando los archivos VCFs, ordando y dejando los únicos
+
+Command error:
+  Writing to /tmp/bcftools-sort.6RdzTc
+  [E::hts_open_format] Failed to open file test/data/*.gz
+  Failed to open: test/data/*.gz
+  [E::bcf_hdr_read] Input is not detected as bcf or vcf format
+  bcftools: bgzf.c:881: bgzf_read: Assertion `fp->is_write == 0' failed.
+  /bin/bash: line 5:  8775 Exit 255                bcftools concat $INDEX_PATH --allow-overlaps --remove-duplicates
+        8776 Aborted                 (core dumped) | bcftools sort --output-file $OUTPUT_FILE
+  mk: echo "[DEBUG] Concatenando ...  : exit status=exit(134)
+
+Work dir:
+  /mnt/Almacenamiento/Documents/78GMX/12g_and_76g_1/work/4c/a698b92cf4cb30e540aa7f66885adb
+
+Tip: you can try to figure out what's wrong by changing to the process work dir and showing the script file named `.command.sh`
+Jul-14 13:42:54.609 [Actor Thread 2] DEBUG nextflow.Session - <<< barrier arrive (process: _pre2_concatenate)
+Jul-14 13:42:54.612 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `_pre2_concatenate` terminated with an error exit status (123)
+Jul-14 13:42:54.637 [main] DEBUG nextflow.Session - Session await > all process finished
+Jul-14 13:42:54.639 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jul-14 13:42:54.641 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local)
+Jul-14 13:42:54.648 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=0; failedCount=1; ignoredCount=0; cachedCount=2; succeedDuration=0ms; failedDuration=766ms; cachedDuration=967ms]
+Jul-14 13:42:54.836 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Jul-14 13:42:54.874 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
