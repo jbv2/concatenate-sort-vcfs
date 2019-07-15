@@ -2,6 +2,7 @@
 
 ## ENVIRONMENTE VARIABLES REQUIRED
 #format is: export VARNAME="value"
+#export OUTPUT_FILE="test/data/12g.simplified.concatenated.vcf"
 
 # borrar resultados de prueba anterior
 rm -fr test/results/

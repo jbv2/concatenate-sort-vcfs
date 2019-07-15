@@ -6,5 +6,4 @@ MKSHELL=/bin/bash
 	echo "[DEBUG] Concatenando los archivos VCFs, ordando y dejando los únicos"
 	bgzip $prereq
 	bcftools index $prereq.gz
-	bcftools concat $(find -L . -type f -name "*.gz") --allow-overlaps --remove-duplicates | \
-	bcftools sort --output-file $OUTPUT_FILE
+	bcftools concat --allow-overlaps --remove-duplicates --output $OUTPUT_FILE $(find -L . -type f -name "*.gz")
