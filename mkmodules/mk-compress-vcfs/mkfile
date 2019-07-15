@@ -4,5 +4,6 @@ MKSHELL=/bin/bash
 #Este módulo comprime los archivos VCFs
 %.simplified.concatenated.vcf.bgz:Q: %.simplified.concatenated.vcf
 	echo "[DEBUG] Comprimiendo archivos"
-	bcftools sort --output-file $target --output-type z $prereq
+	bcftools sort $prereq |
+	bcftools view --output-type z \
 	&& mv $target.build $target
