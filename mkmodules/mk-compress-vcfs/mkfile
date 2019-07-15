@@ -5,4 +5,4 @@ MKSHELL=/bin/bash
 %.simplified.concatenated.vcf.bgz:Q: %.simplified.concatenated.vcf
 	echo "[DEBUG] Comprimiendo archivos"
 	bcftools sort --output-file $target --output-type z $prereq
-	#&& mv $target.build $target
+	&& mv $target.build $target
