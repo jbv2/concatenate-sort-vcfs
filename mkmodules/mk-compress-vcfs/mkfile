@@ -3,12 +3,12 @@ MKSHELL=/bin/bash
 
 #Este módulo comprime los archivos VCFs
 %.sorted.normalized.split_multiallelics.vcf.gz:Q: %.vcf
-        echo "[DEBUG] Comprimiendo archivos para $prereq"
-        $BCFTOOLS norm \
-                --fasta-ref $GENOME_REFERENCE \
-                --multiallelics -any \
-                $prereq \
-        | $BCFTOOLS sort \
-        | uniq \
-        | bgzip > $target \
-        && tabix -p vcf $target
+	echo "[DEBUG] Comprimiendo archivos para $prereq"
+	bcftools norm \
+		--fasta-ref $GENOME_REFERENCE \
+		--multiallelics -any \
+		$prereq \
+	| bcftools sort \
+	| uniq \
+	| bgzip > $target \
+	&& tabix -p vcf $target

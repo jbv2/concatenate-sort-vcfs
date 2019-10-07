@@ -2,12 +2,14 @@
 
 ## ENVIRONMENTE VARIABLES REQUIRED
 #format is: export VARNAME="value"
-#export OUTPUT_FILE="test/data/12g.simplified.concatenated.vcf"
+#export BCFTOOLS="/home/ballesteros/programs/bcftools/bcftools"
+export GENOME_REFERENCE="test/reference/Homo_sapiens_assembly19.fasta"
 
 # borrar resultados de prueba anterior
-rm -fr test/results/
+rm -r test/results/
 
 # Crear un test/results vacío
 mkdir -p test/results
-bash runmk.sh && mv test/data/*.simplified.concatenated.vcf.bgz test/results \
- && echo "module test successful"
+bash runmk.sh \
+&& mv test/data/*.sorted.normalized.split_multiallelics.vcf.gz* test/results \
+&& echo "module test successful"

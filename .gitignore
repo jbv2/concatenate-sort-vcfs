@@ -2,7 +2,8 @@
 .nextflow.log*
 
 # ignorando los resultados de las pruebas locales de los módulos
-#mkmodules/mk-*/test/results/
+mkmodules/mk-*/test/results/
+test/results
 
 #archivos temporales
 *.tmp
@@ -16,3 +17,6 @@ work
 #ignorando archivos basura nexflow
 .nextflow*
 .nextflow/history
+
+
+test/reference

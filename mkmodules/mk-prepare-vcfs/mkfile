@@ -4,13 +4,13 @@ MKSHELL=/bin/bash
 #Este bloque simplifica el vcf con bcftools para hacerlo más fácilmente manipulable
 %.simplified.vcf.gz:Q: %.vcf.gz
 	echo "[DEBUG] Simplificando los vcf"
-        bcftools view $prereq \
-                --exclude-uncalled  \
-                --exclude 'INFO/AN == 1' \
-                --types snps \
-        | grep -e "PASS" -e "^#" \
-        | cut -f1-9 \
-        | bcftools annotate \
-                --remove "INFO,FORMAT" \
-        | bgzip > $target \
-        && tabix -p vcf $target
+	bcftools view $prereq \
+		--exclude-uncalled  \
+		--exclude 'INFO/AN == 1' \
+		--types snps \
+	| grep -e "PASS" -e "^#" \
+	| cut -f1-9 \
+	| bcftools annotate \
+		--remove "INFO,FORMAT" \
+	| bgzip > $target \
+	&& tabix -p vcf $target

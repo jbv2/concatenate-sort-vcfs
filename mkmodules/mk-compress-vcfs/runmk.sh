@@ -2,6 +2,7 @@
 
 find -L . \
         -type f \
-        -name "*.simplified.concatenated.vcf" \
-| sed "s#.simplified.concatenated.vcf#.simplified.concatenated.vcf.bgz#" \
+        -name "*.vcf" \
+| sed "s#.vcf#.sorted.normalized.split_multiallelics.vcf.gz#" \
 | xargs mk $@
+

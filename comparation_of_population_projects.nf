@@ -55,7 +55,7 @@ process _pre1_prepare_vcfs {
     file mkfiles from mkfiles_pre1
     output:
     //declarar canal de salida
-     file "*.simplified.vcf" into results_pre1_prepare_vcfs
+     file "*.simplified.vcf.g*" into results_pre1_prepare_vcfs
    """
     #echo "este es un nuevo dir de trabajo"
     bash runmk.sh
@@ -88,10 +88,9 @@ process _pre2_concatenate{
   file simplified_vcf from inputs_for_pre2
   file mkfiles from mkfiles_pre2
   output:
-  file "12g.simplified.concatenated.vcf" into results_pre2_concatenate_vcfs
+  file "concatenated.vcf" into results_pre2_concatenate_vcfs
 
   """
-  export OUTPUT_FILE="${params.output_file}"
   bash runmk.sh
   """
 }
@@ -121,9 +120,10 @@ process _pre3_compress_vcfs{
   file simplified_concatenated_vcf from inputs_for_pre3
   file mkfiles from mkfiles_pre3
   output:
-  file "*.simplified.concatenated.vcf.bgz" into results_pre3_compress_vcfs
+  file "*.sorted.normalized.split_multiallelics.vcf.gz*" into results_pre3_compress_vcfs
 
   """
+  export GENOME_REFERENCE="${params.genome_reference}"
   bash runmk.sh
   """
 }

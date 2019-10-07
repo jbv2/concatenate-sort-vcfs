@@ -3,9 +3,9 @@ MKSHELL=/bin/bash
 
 #Este módulo concatena los vcf, los ordena y deja los snps únicos
 %/concatenated.vcf:Q: %/
-        echo "[DEBUG] Concatenando los archivos VCFs que radican en $prereq ; y que son $(ls $prereq)"
-        bcftools concat \
-                --allow-overlaps \
-                --remove-duplicates \
-                --output $target \
-                $prereq/*.vcf.gz
+	echo "[DEBUG] Concatenando los archivos VCFs que radican en $prereq ; y que son $(ls $prereq)"
+	bcftools concat \
+		--allow-overlaps \
+		--remove-duplicates \
+		--output $target \
+		$prereq/*.vcf.gz
