@@ -2,7 +2,13 @@ MKSHELL=/bin/bash
 #Definir MKSHELL ahora debe ir siempre arriba con /bin/bash. "Todo lo que viene a continuación interprétalo con bash"
 
 #Este módulo comprime los archivos VCFs
-%.simplified.concatenated.vcf.bgz:Q: %.simplified.concatenated.vcf
-	echo "[DEBUG] Comprimiendo archivos"
-	bcftools sort --output-file $target.build --output-type z $prereq \
-	&& mv $target.build $target
+%.sorted.normalized.split_multiallelics.vcf.gz:Q: %.vcf
+        echo "[DEBUG] Comprimiendo archivos para $prereq"
+        $BCFTOOLS norm \
+                --fasta-ref $GENOME_REFERENCE \
+                --multiallelics -any \
+                $prereq \
+        | $BCFTOOLS sort \
+        | uniq \
+        | bgzip > $target \
+        && tabix -p vcf $target
