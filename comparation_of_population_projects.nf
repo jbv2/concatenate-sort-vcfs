@@ -55,7 +55,8 @@ process _pre1_prepare_vcfs {
     file mkfiles from mkfiles_pre1
     output:
     //declarar canal de salida
-     file "*.simplified.vcf.g*" into results_pre1_prepare_vcfs
+    file "*.simplified.vcf.gz.tbi" into index_pre1_prepare_vcfs
+     file "*.simplified.vcf.gz" into results_pre1_prepare_vcfs
    """
     #echo "este es un nuevo dir de trabajo"
     bash runmk.sh
@@ -76,6 +77,12 @@ results_pre1_prepare_vcfs
   .set{inputs_for_pre2}
 /* Load mkfiles */
 
+index_pre1_prepare_vcfs
+.view()
+.toList()
+.view()
+.set{index_for_pre2}
+
 Channel
   .fromPath("mkmodules/mk-concatenate-vcfs/*")
     .toList()
@@ -86,6 +93,7 @@ process _pre2_concatenate{
   publishDir "test/results/_pre2_concatenate/", mode: "copy"
   input:
   file simplified_vcf from inputs_for_pre2
+  file index from index_for_pre2
   file mkfiles from mkfiles_pre2
   output:
   file "concatenated.vcf" into results_pre2_concatenate_vcfs

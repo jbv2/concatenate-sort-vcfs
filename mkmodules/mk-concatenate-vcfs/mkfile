@@ -8,4 +8,4 @@ MKSHELL=/bin/bash
 		--allow-overlaps \
 		--remove-duplicates \
 		--output $target \
-		$prereq/*.vcf.gz
+		$prereq*.vcf.gz

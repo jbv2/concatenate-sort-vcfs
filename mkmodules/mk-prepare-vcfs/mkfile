@@ -11,6 +11,6 @@ MKSHELL=/bin/bash
 	| grep -e "PASS" -e "^#" \
 	| cut -f1-9 \
 	| bcftools annotate \
-		--remove "INFO,FORMAT" \
+		--remove "^INFO/AN,INFO/AC,INFO/AF" \
 	| bgzip > $target \
 	&& tabix -p vcf $target
